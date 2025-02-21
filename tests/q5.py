@@ -1,5 +1,5 @@
 test = {
-  'name': 'Pandas_Q5',
+  'name': 'Numpy - Q5',
   'points': 0,
   'suites': [
     {
@@ -7,12 +7,12 @@ test = {
         {
           'code': r"""
           >>> # It looks like you didn't give anything the name
-          >>> # reduced_data.  Maybe there's a typo, or maybe you
+          >>> # fb_vol.  Maybe there's a typo, or maybe you
           >>> # just need to run the cell above this test cell where you defined
-          >>> # reduced_data.  (Click that cell and then click the "run
+          >>> # fb_vol.  (Click that cell and then click the "run
           >>> # cell" button in the menu bar above.)
-          >>> 'reduced_data' in vars()
-          cef461e340f176db84632b8704478459
+          >>> 'fb_vol' in vars()
+          8b4928a4e87b08b3d1b0cc98b979c72f
           # locked
           """,
           'hidden': False,
@@ -20,31 +20,8 @@ test = {
         },
         {
           'code': r"""
-          >>> reduced_data.shape[1] == data.shape[1] - 3
-          cef461e340f176db84632b8704478459
-          # locked
-          """,
-          'hidden': False,
-          'locked': True
-        },
-        {
-          'code': r"""
-          >>> reduced_data.shape[0] == data.shape[0]
-          cef461e340f176db84632b8704478459
-          # locked
-          """,
-          'hidden': False,
-          'locked': True
-        },
-        {
-          'code': r"""
-          >>> # It looks like the columns requested to be removed
-          >>> # do still exist.
-          >>> exists = False
-          >>> if 'Cabin' in reduced_data.columns: 
-          ...     exists = True
-          >>> exists
-          6f112e0776e191b5e4dfb1ceb0fd2e17
+          >>> fb_vol//0.0001 == 161.0
+          8b4928a4e87b08b3d1b0cc98b979c72f
           # locked
           """,
           'hidden': False,

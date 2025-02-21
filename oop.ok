@@ -1,0 +1,26 @@
+{
+    "name": "OOP",
+    "endpoint": "",
+    "src": [
+        "oop.py",
+		    "oop_extra.py",
+		    "numpy.ipynb"
+    ],
+    "tests": {
+      "tests/recap.py": "ok_test",
+      "tests/monsters.py": "ok_test",
+      "tests/more_monsters.py": "ok_test",
+	    "tests/q*.py": "ok_test",
+	    "oop.py:Monster.heal": "doctest",
+	    "oop.py:Monster.use_attack": "doctest",
+      "oop.py:test_attack": "doctest",
+      "oop_extra.py:test_listqueue": "doctest",
+      "oop_extra.py:test_queue": "doctest"
+    },
+    "protocols": [
+        "file_contents",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>session_6</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>session_9</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7516,37 +7516,42 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Session-6:-Data-structures,-files,-and-errors">Session 6: Data structures, files, and errors<a class="anchor-link" href="#Session-6:-Data-structures,-files,-and-errors">¶</a></h1><p><em>Data Structures and Algorithms</em></p>
+<h1 id="Optional-Material:-OOP">Optional Material: OOP<a class="anchor-link" href="#Optional-Material:-OOP">¶</a></h1><p><em>Data Structures and Algorithms</em></p>
 <p><em>Imperial College Business School</em></p>
 <hr/>
-<p>This session will introduce you to the following Python concepts: <em>dictionaries, sets and tuples, error handling and file input and output</em>.</p>
-<p>We have previously covered many key Python concepts, including the use of variables and functions, and the list data structure. In this session we'll learn to use some of Python's other compound data structures: dictionaries, sets, and tuples. Each of these has its own benefits, and we'll learn to pick the appropriate one for the kind of problem and data we're facing. We will also read data from files into Python.</p>
+<p>Everything in Python is an "object". But what are objects? We will introduce the fundamental concept of object-oriented programming, and talk about how this links to the design of data structures. We will introduce key linear data structures, and learn to define our own data structures.</p>
+<p>We will also introduce some other helpful Python libraries: numpy for numerical computing and matplotlib for plotting.</p>
 <hr/>
 <h2 id="Preparation:">Preparation:<a class="anchor-link" href="#Preparation:">¶</a></h2><p><strong>Readings:</strong></p>
-<p>Guttag: Chapters 5.6-5.8, 7, 8.2, 9.</p>
+<p>Guttag: Chapter 10.1.</p>
 <p>OR</p>
-<p>Sweigart, Al. Automate the Boring Stuff with Python.</p>
+<p>Chithul, Swaroop. A Byte of Python.</p>
 <ul>
-<li><p>Chapter 5 – Dictionaries
-<a href="https://automatetheboringstuff.com/chapter5/">https://automatetheboringstuff.com/chapter5/</a></p>
+<li><p>Object Oriented Programming</p>
 </li>
-<li><p>Chapter 8 – Files <a href="https://automatetheboringstuff.com/chapter8/">https://automatetheboringstuff.com/chapter8/</a></p>
+<li><p><a href="https://python.swaroopch.com/oop.html">https://python.swaroopch.com/oop.html</a></p>
 </li>
 </ul>
-<p><em><strong>Optional Readings:</strong></em></p>
-<p>Miller and Ranum. Problem Solving with Algorithms and Data Structures.</p>
+<p>AND (for numpy and matplotlib):</p>
+<p>VanderPlas, Jake. Python Data Science Handbook.</p>
 <ul>
-<li><p><a href="https://runestone.academy/runestone/books/published/pythonds/index.html">https://runestone.academy/runestone/books/published/pythonds/index.html</a></p>
+<li><p><a href="https://github.com/jakevdp/PythonDataScienceHandbook">https://github.com/jakevdp/PythonDataScienceHandbook</a></p>
 </li>
-<li><p>Section 6.5: Hashing (how dictionaries work)</p>
+<li><p>Chapter 2</p>
 </li>
+</ul>
+<p>Rougier, Nicolas. Numpy tutorial.</p>
+<ul>
+<li><a href="http://www.labri.fr/perso/nrougier/teaching/numpy/numpy.html">http://www.labri.fr/perso/nrougier/teaching/numpy/numpy.html</a></li>
 </ul>
 <p><strong>Questions:</strong></p>
 <p>Please read the material above, and think about how you would explain to your classmates:</p>
 <ul>
-<li><p>When is a dictionary useful compared to a list?</p>
+<li><p>What is object-oriented programming, and what are its main benefits?</p>
 </li>
-<li><p>When and why do we use exceptions?</p>
+<li><p>What are classes, objects, and instances?</p>
+</li>
+<li><p>What do leading underscores signify in Python?</p>
 </li>
 </ul>
 <hr/>
@@ -7560,12 +7565,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Starting-out">Starting out<a class="anchor-link" href="#Starting-out">¶</a></h2><h3 id="Submission">Submission<a class="anchor-link" href="#Submission">¶</a></h3><p>At the end of this session, you will submit the file <code>ses06.py</code> following the instructions below.</p>
-<ul>
-<li>Questions 1 - 7 are the main part of the session.</li>
-<li>Question 8 is and the exercises on Trump tweets and web scraping (separate Jupyter Notebook files) are optional. It is recommended that you work on these if you finish the required questions early, or on your own time as extra practice.</li>
-</ul>
-<h3 id="Using-OK">Using OK<a class="anchor-link" href="#Using-OK">¶</a></h3><p>We will use a program called <code>ok</code> to test our code.</p>
+<h2 id="About">About<a class="anchor-link" href="#About">¶</a></h2><p>This material is entirely optional. If you are interested, we recommend you complete the exercises in <code>oop.py</code> and <code>oop_extra.py</code> following the instructions below, and then engage with the <code>numpy.ipynb</code> Jupyter Notebook.</p>
+<h2 id="Using-OK">Using OK<a class="anchor-link" href="#Using-OK">¶</a></h2><p>We will use a program called <code>ok</code> to test our code.</p>
 <p>You should have OK in the Codespace for this session. The session will include instructions for running <code>ok</code> commands as we need them.</p>
 <p>For help with running <code>ok</code>, you can run</p>
 <pre><code>python ok -h
@@ -7577,17 +7578,7 @@ a.anchor-link {
 <pre><code>python ok -q function_name -v
 </code></pre>
 <p>If you get stuck with how to call <code>ok</code>, please check the first session for more detailed instructions on the system.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">¶</a></h2><p>Let's recap some of the Python concepts we've covered. Use the following command on the command line to start the first exercise.</p>
+<h2 id="Recap">Recap<a class="anchor-link" href="#Recap">¶</a></h2><h3 id="Question-1:-Recap">Question 1: Recap<a class="anchor-link" href="#Question-1:-Recap">¶</a></h3><p>Let's start by some recap exercises. Run the following command on the command line/terminal:</p>
 <pre><code>python ok -q recap -u
 </code></pre>
 </div>
@@ -7600,8 +7591,24 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Built-in-data-structures">Built-in data structures<a class="anchor-link" href="#Built-in-data-structures">¶</a></h2><p>Python has several data structures built-in in its core components. You have already been introduced to one of them: the list.
-Today we'll cover the <code>dictionary</code>, <code>set</code>, and <code>tuple</code> structures.</p>
+<h2 id="What-is-an-object?">What is an object?<a class="anchor-link" href="#What-is-an-object?">¶</a></h2><h2 id="Defining-objects:-monsters">Defining objects: monsters<a class="anchor-link" href="#Defining-objects:-monsters">¶</a></h2><p>We've started building a data structure for pocket monsters in a hypothetical game where you collect monsters and use them to fight other monsters. A pocket monster has a number of attributes, like a name, a type, hit points and combat points. We can represent a pocket monster by creating variables like this:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">monster_name</span> <span class="o">=</span> <span class="s1">'Pikachu'</span>
+<span class="n">combat_points</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">hit_points</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">monster_type</span> <span class="o">=</span> <span class="s1">'lightning'</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -7612,13 +7619,21 @@ Today we'll cover the <code>dictionary</code>, <code>set</code>, and <code>tuple
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Dictionaries">Dictionaries<a class="anchor-link" href="#Dictionaries">¶</a></h3><p>We have been using lists, where we could access the list contents by their <strong>position</strong> in the list. Lists are flexible and may contain elements of different data types. For example, we might want to keep track of people and their email addresses. One way to do it would be as follows.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">'Sally'</span><span class="p">,</span> <span class="s1">'sally[at]gmail.com'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'Fred'</span><span class="p">,</span> <span class="s1">'fred[at]gmail.com'</span><span class="p">],</span> 
-         <span class="p">[</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'john92[at]yahoo.com'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'Ellie'</span><span class="p">,</span> <span class="s1">'ellie[at]hotmail.com'</span><span class="p">]]</span>
+<p>However, if we want to have many monsters, we would need too many variables. We could then try storing the monsters in a dictionary:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">monsters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Pikachu'</span><span class="p">:[</span><span class="mi">20</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="s1">'electric'</span><span class="p">],</span> <span class="s1">'Squirtle'</span><span class="p">:[</span><span class="mi">82</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="s1">'water'</span><span class="p">],</span> <span class="s1">'Mew'</span><span class="p">:[</span><span class="mi">1940</span><span class="p">,</span><span class="mi">599</span><span class="p">,</span><span class="s1">'cat'</span><span class="p">]}</span>
 </pre></div>
-<p>Let's say we want to look up Ellie's email in the list. How do we do this? Our list is not sorted, but we could do a linear search within the first items of each lists to find her name, and then access her email. We would look up index <code>[0][0]</code>, see that it is not Ellie, then <code>[1][0]</code>, see that it is not Ellie, until we find Ellie, and then find the email.</p>
-<p>This is cumbersome and slow, especially if we need to do it repeatedly. If we keep the list sorted, we can then use binary search for a faster lookup, but is there a way we can do even better?</p>
-<p>The answer is <strong>yes</strong>, using a <em>dictionary</em>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -7629,137 +7644,44 @@ Today we'll cover the <code>dictionary</code>, <code>set</code>, and <code>tuple
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A dictionary is a mapping of <strong>keys</strong> to <strong>values</strong>. Here, we want to associate each name to an email address, or in other words <em>map</em> names to email addresses. So, the <strong>names</strong> are our <strong>keys</strong>, and the <strong>emails</strong> are the <strong>values</strong>.</p>
-<p>Once we've set up a dictionary, we can access the values directly using the <strong>key</strong> instead of an integer index. This is much simpler than going through the list indices to find the right name.</p>
-<p>Once our dictionary is ready, we will be able to do the following (but not yet!):</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Ellie'</span><span class="p">]</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s1">'ellie[at]hotmail.com'</span>
-</pre></div>
-<p>How do we create a dictionary? We put key-value pairs inside curly braces. Each key is followed by a colon and then its value, and the pairs are separated by commas. This creates a new object of dictionary type, which Python calls just "dict".</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">email_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Sally'</span><span class="p">:</span> <span class="s1">'sally[at]gmail.com'</span><span class="p">,</span>
- <span class="s1">'Ellie'</span><span class="p">:</span> <span class="s1">'ellie[at]hotmail.com'</span><span class="p">}</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">email_dict</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">{</span><span class="s1">'Sally'</span><span class="p">:</span> <span class="s1">'sally[at]gmail.com'</span><span class="p">,</span>
- <span class="s1">'Ellie'</span><span class="p">:</span> <span class="s1">'ellie[at]hotmail.com'</span><span class="p">}</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="n">email_dict</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">dict</span>
-</pre></div>
-<p>To access a value, we can now do what we wanted.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Ellie'</span><span class="p">]</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="s1">'ellie[at]hotmail.com'</span>
-</pre></div>
-<p>If we try to access a key that does not exist in the dictionary, we get an error, just like we would get one if tried to access a list out of its index range.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Fred'</span><span class="p">]</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">"&lt;ipython-input-7-64c366230f32&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Fred'</span><span class="p">]</span>
-<span class="ne">KeyError</span><span class="p">:</span> <span class="s1">'Fred'</span>
-</pre></div>
-<p>We can create an empty dictionary with the function <code>dict()</code>, or just curly braces. An empty dictionary is also displayed as empty curly braces, just like an empty list is shown as empty square brackets. Let's restart our dictionary from scratch.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">email_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span> <span class="c1"># or: email_dict = {}</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">email_dict</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="p">{}</span>
-</pre></div>
-<p>To update a value associated with a key, we use syntax very similar to lists. The difference is that we don't use update the value at an integer index, but the value at a dictionary key.</p>
-<p>If the key already exists in the dictionary, the value is updated. If the key does not exist, it is added with the specified value. So, to add all of our four friends to the empty dictionary, we run these statements.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Sally'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'sally[at]gmail.com'</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Fred'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'fred[at]gmail.com'</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'John'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'john92[at]yahoo.com'</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Ellie'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ellie[at]hotmail.com'</span>
-</pre></div>
-<p>Now, if Ellie changes her email address, we can update it with a similar command.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Ellie'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ellie[at]gmail.com'</span>
-</pre></div>
-<p>If we want to remove an entry altogether, we use the <code>del</code> command, giving the dictionary name and the key.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="k">del</span> <span class="n">email_dict</span><span class="p">[</span><span class="s1">'Fred'</span><span class="p">]</span>
-</pre></div>
-<p>To test whether a key exists in the dictionary, we can use the <code>in</code> keyword. This will give the a Boolean value True or False.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="s1">'Fred'</span> <span class="ow">in</span> <span class="n">email_dict</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="kc">False</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="s1">'Ellie'</span> <span class="ow">in</span> <span class="n">email_dict</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="kc">True</span>
-</pre></div>
-<p>This is the basic syntax of dictionaries.</p>
-<p>To recap, the dictionary is a data structure that associates keys to values. You might have observed that because of this key-value association, each dictionary key must be <em>unique</em>. So, if we want to add another friend called Ellie, we'll need to give her a different key, perhaps with her surname included.</p>
+<p>But this may also become unwieldy.
+What if we want to add different kinds of attacks for each of the monsters? These attacks would have their own characteristics (name, damage, etc.). We would likely end up with dictionaries of attack attributes nested within lists of monster details within dictionaries of monsters. This may get tricky, but  further, we would also like to use these attacks to have the monsters battle each other in the game. So, we need to create actions on the monster data: for example, a monster may become hurt in a battle, so we need functionality to reduce its health. We'd like to have a way to organize monster data and <em>actions</em> on these data together in a consistent and convenient manner.</p>
+<p>So far, we've organized our programs around functions which operate on data. This is called <em>procedural programming</em>, and works well for most medium-sized projects. Now, with monsters, we have a problem where we'd like to combine both monster <em>data</em> and <em>functionality</em> together. In Python, we can do this inside an <strong>object</strong>. Instead of storing monster data and functions, we'll define monsters as a <strong>class</strong>.</p>
+<p>Classes and objects are key components of object-oriented programming.
+A class defines a new <em>type</em> of object for Python, and objects are <em>instances</em> of this type. We have already seen many types of built-in Python objects, such as strings, floats, and dictionaries. The type <code>str</code>, for example, is a class, and <code>'Hello'</code> is an object that is an instance of the <code>str</code> type.</p>
+<p>Objects combine a representation of data with functionality related to that data. A string object, for example, includes data consisting of a sequence of characters, and methods like <code>str.upper()</code> to manipulate the data. More generally, data can be stored in objects in variables defined inside the object that are said to belong to the object. These data are often called attributes or fields. Similarly, functions defined inside the object are said to belong to the object and called methods.</p>
+<p>Now we're adding our own object type: a pocket monster. The syntax for defining a new class <code>Monster</code> is as follows.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A word on the data we can use as dictionary keys and values. Dictionary values can be any Python objects (numbers, strings, lists, other dictionaries...). The data types we can use keys, however, are more restricted. We can use immutable types like strings and numbers, but not mutable types like lists or other dictionaries. This is because with a mutable key like a list, the value of the key might change, and this would confound our lookups.</p>
-<table>
-<thead>
-<tr>
-<th>Keys</th>
-<th>Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>must be unique</td>
-<td>could be the same for different keys</td>
-</tr>
-<tr>
-<td>immutable (hashable) types</td>
-<td>any Python objects</td>
-</tr>
-</tbody>
-</table>
-<p>Let's pause for a moment and think about why the dictionary structure is useful. As we saw above, we can achieve the same functionality using lists. But the dictionary is much more <strong>intuitive</strong> to use when looking up elements. With a list, we would need to write a loop to go through the data. With dictionary, it's also much easier to check whether a contact is in our address book already, and avoid accidentally adding the same contact twice.</p>
-<p>However, besides convenience, there is another crucial reason for using a dictionary: it is blazingly <strong>fast</strong>. When we look up 'Ellie' in a list, this is a linear time operation as we would have to loop through the list. In a dictionary this only takes constant time on average. This may surprise you: how does the dictionary avoid the looping? This has to do with the ingenious design of the data structure. Python Dictionaries are implemented as a hash table structure. We will not go into detail here on how they work, but you will find more information on hash tables in the readings for this session.</p>
-<p>To sum up, dictionaries are both convenient and fast when our data involves <strong>mappings from keys to values</strong>. In some ways, you can think of a list as a similar mapping, but of integers to values, and dictionary as a mapping with more general keys. Notice however that <strong>dictionaries are not sorted</strong>, and <strong>we cannot access the contents by index</strong>. For tasks that require the ordering of items, we often prefer lists over dictionaries.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Looping-through-dictionaries">Looping through dictionaries<a class="anchor-link" href="#Looping-through-dictionaries">¶</a></h3><p>Many dictionary applications involve looping. Recall the general structure of looping through a sequence, like a list or a string:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
-    <span class="n">statements</span>
-</pre></div>
-<p>A dictionary contains key-value pairs, so in effect two possible variables per element, so how does looping work? A simple loop will use the <strong>keys</strong> as the loop variable:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">email_dict</span><span class="p">:</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="n">Sally</span>
-<span class="n">Ellie</span>
-<span class="n">Fred</span>
-<span class="n">John</span>
-</pre></div>
-<p>Notice that because a dictionary is not sorted, the results may come out in different order depending on the system setup, not alphabetically or in the order they were added.</p>
-<p>If we want to print out both the key and the value, we can loop either access the value at each key, or call the <code>items()</code> method of dictionaries:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">email_dict</span><span class="p">:</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">email_dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
-<span class="n">John</span> <span class="n">john92</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">yahoo</span><span class="o">.</span><span class="n">com</span>
-<span class="n">Ellie</span> <span class="n">ellie</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">hotmail</span><span class="o">.</span><span class="n">com</span>
-<span class="n">Sally</span> <span class="n">sally</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span>
-<span class="n">Fred</span> <span class="n">fred</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Monster</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span> <span class="c1"># block of code, no content yet</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">email_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="n">John</span> <span class="n">john92</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">yahoo</span><span class="o">.</span><span class="n">com</span>
-<span class="n">Ellie</span> <span class="n">ellie</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">hotmail</span><span class="o">.</span><span class="n">com</span>
-<span class="n">Sally</span> <span class="n">sally</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span>
-<span class="n">Fred</span> <span class="n">fred</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span>
+<span class="n">pika</span> <span class="o">=</span> <span class="n">Monster</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pika</span><span class="p">)</span>
 </pre></div>
-<p>If we want to loop just through the values, we can similarly use the <code>values()</code> method.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">item_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<span class="n">john92</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">yahoo</span><span class="o">.</span><span class="n">com</span>
-<span class="n">ellie</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">hotmail</span><span class="o">.</span><span class="n">com</span>
-<span class="n">sally</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span>
-<span class="n">fred</span><span class="p">[</span><span class="n">at</span><span class="p">]</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span>
-</pre></div>
-<p>Now, let's practice working with dictionaries with the following exercises.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;__main__.Monster object at 0x0000022C0EF3CB00&gt;
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7770,191 +7692,42 @@ Today we'll cover the <code>dictionary</code>, <code>set</code>, and <code>tuple
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">¶</a></h3><p>Use the command on the command line</p>
-<pre><code>python ok -q dicts -u
-</code></pre>
-<p>to start the exercises.</p>
-<h3 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">¶</a></h3><p>a. Complete the function <code>print_dict_values</code> in the script file <code>ses06.py</code>. The function accepts a dictionary as argument, and prints all its key/value pairs as specified in the file. The function returns the number of keys in the dictionary.</p>
-<p><strong>Hint</strong>: you can use <code>sorted()</code> to sort the keys of the dictionary, and then loop through them. You can get the keys of a dictionary <code>d</code> as a list with</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># get keys as list</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sorted_keys</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="c1"># sort keys</span>
-</pre></div>
-<p>You'll then need to loop through the keys to print the key-value pairs.</p>
-<p>b. Complete the function <code>count_characters</code> that accepts as argument a string and counts the number of each character in the string. The function should return a dictionary with characters as keys and their occurrence counts as values.</p>
-<p>This works as follows:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">count_characters</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
-<span class="p">{</span><span class="s1">'h'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'l'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-</pre></div>
-<p><strong>Hint</strong>: you'll need to loop through the characters of a string, and update a dictionary values as you go along. You may assume the input string is lower case. If this was not the case, what string method would you need?</p>
-<p>You can use the commands</p>
-<pre><code>python ok -q print_dict_values
-python ok -q count_characters
-</code></pre>
-<p>to test your implementations.</p>
+<p>The class is defined using the <code>class</code> keyword, followed by its name. Here we specify that the class is a type of <code>object</code>, which is a very general Python construct. This is followed by a colon and an indented block of code which contains class details, though nothing yet. We'll define all classes in this way.</p>
+<p>When we define the <code>Monster</code> class, we make this type of objects available for our use, just like strings or lists.</p>
+<p>We've then created an instance of the class using the class name followed by parenthesis, and assigned it to the variable <code>pika</code> (we don't need <code>object</code> here). The print function shows that the result is indeed a <code>Monster</code> object, which is stored at a specific memory location.</p>
+<p>Let's add functionality to the class by creating a method.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Sets">Sets<a class="anchor-link" href="#Sets">¶</a></h3><p>A set is an unordered collection of unique items. A set is created using the function<code>set()</code>. For example, if we have a list with some duplicate items, passing it to <code>set()</code> will create a set that only contains the unique elements of the original list.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">])</span>
-<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">}</span>
-</pre></div>
-<p>Alternatively, we can create a set like a list by replacing <code>[</code> and <code>]</code> by <code>{</code> and <code>}</code> respectively:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">set</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-</pre></div>
-<p>The standard operations on a set include adding and removing elements, as well as union and intersection. Adding and removing works with the <code>add</code> and <code>remove</code> methods.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-</pre></div>
-<p>A union between two sets means taking all items that appear in at least one of the sets. An intersection means taking only the items that appear in both sets.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># Equivalent way of giving previous command</span>
-<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-</pre></div>
-<p>Looping through a set works much like looping through a list.</p>
-<div class="highlight"><pre><span></span><span class="n">nordic_countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Sweden'</span><span class="p">,</span> <span class="s1">'Finland'</span><span class="p">,</span> <span class="s1">'Norway'</span><span class="p">,</span> <span class="s1">'Denmark'</span><span class="p">,</span> <span class="s1">'Iceland'</span><span class="p">}</span>
-<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">nordic_countries</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
-</pre></div>
-<p>We can check membership with <code>in</code>:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">'Estonia'</span> <span class="ow">in</span> <span class="n">nordic_countries</span>
-<span class="kc">False</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s1">'Finland'</span> <span class="ow">in</span> <span class="n">nordic_countries</span>
-<span class="kc">True</span>
-</pre></div>
-<p>As with dictionaries,  the inner workings of sets involve hashing, and lookups are on average constant time $O(1)$.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Tuples">Tuples<a class="anchor-link" href="#Tuples">¶</a></h3><p>A tuple is an ordered sequence. We have already seen two ordered sequences: lists and strings. Recall that a list was flexible and <em>mutable</em>: its elements could be any Python objects, and we could change the values of these elements. A string, however, was an <em>immutable</em> sequence of <em>characters</em> only, where we could not do simple changes.</p>
-<p>A tuple is flexible in contents, like a list, but immutable, like a string. That is, a tuple is fixed size and includes fixed values.</p>
-<p>We create tuples using parentheses instead of brackets.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'Helsinki'</span><span class="p">,</span> <span class="s1">'St. Petersburg'</span><span class="p">,</span> <span class="s1">'Stockholm'</span><span class="p">)</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">tuple</span>
-</pre></div>
-<p>We can access, slice, and loop through tuples like lists.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">cities</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s1">'Stockholm'</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">cities</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="p">(</span><span class="s1">'Helsinki'</span><span class="p">,</span> <span class="s1">'St. Petersburg'</span><span class="p">)</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
-<span class="o">...</span>        <span class="nb">print</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
-<span class="n">Helsinki</span>
-<span class="n">St</span><span class="o">.</span> <span class="n">Petersburg</span>
-<span class="n">Stockholm</span>
-</pre></div>
-<p>Since tuples are immutable, if we try to change a value, we will get an error:</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">cities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'London'</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">"&lt;ipython-input-13-f59ce4db2dae&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="n">cities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'London'</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">'tuple'</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
-</pre></div>
-<p>Due to the fixed size of the tuple, it is slightly faster than a list. However, this becomes noticeable only when you do have several thousands of elements, while a list offers a much more dynamic structure. Tuples are useful when we need an ordered sequence and want to be sure that the elements cannot be mutated.</p>
-<p>Here's one common example where you will see tuples. If you have a function that returns multiple values, they are returned as a tuple by default. Let's define such a function:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">squared_and_cubed</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Returns x squared and x cubed.</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
-</pre></div>
-<p>Now, if we call this function, we get a tuple. If we wish to assign the values to different variables, we can use multiple assignment.</p>
-<div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">squared_and_cubed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">squared_and_cubed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-<p>Now practice working with sets and tuples with the following exercises.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Question-4">Question 4<a class="anchor-link" href="#Question-4">¶</a></h3><p>Use the command on the command line</p>
-<pre><code>python ok -q sets -u
-</code></pre>
-<p>to start the exercises.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Comprehensions">Comprehensions<a class="anchor-link" href="#Comprehensions">¶</a></h3><p>We have now gone through the most important standard Python data structures, and looping through them. Now, let's add a useful way of augmenting looping to our toolbox: <strong>comprehensions</strong>.</p>
-<p>We've learned to use loops to create lists. For instance, to create the squared values of integers from 0 to 9, we can do:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="o">...</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-<span class="o">...</span>     <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">81</span><span class="p">]</span>
-</pre></div>
-<p>However, there is another possible syntax, more concise and more <em>pythonic</em>, which is a slightly geeky way to say that the code follows the conventions and best practices of the Python coding community. We can do this in one line of code using what is called a <em>list comprehension</em>.</p>
-<p>Here we create a list using using square brackets, and inside we define the action we wish to perform for each item in the range sequence.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">81</span><span class="p">]</span>
-</pre></div>
-<p>Comprehensions are a concise way to program the creation of a list. Here's another example:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="s1">'a'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="p">[</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'aa'</span><span class="p">,</span> <span class="s1">'aaa'</span><span class="p">,</span> <span class="s1">'aaaa'</span><span class="p">,</span> <span class="s1">'aaaaa'</span><span class="p">,</span> <span class="s1">'aaaaaa'</span><span class="p">,</span> <span class="s1">'aaaaaaa'</span><span class="p">,</span> <span class="s1">'aaaaaaaa'</span><span class="p">,</span> <span class="s1">'aaaaaaaaa'</span><span class="p">]</span>
-</pre></div>
-<p>We can add a condition to filter out odd numbers:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-</pre></div>
-<p>We can generally think of the comprehension structure of consisting of doing mapping and filtering on data. The mapping could be any function that works on the items in the sequence.</p>
-<pre><code>[mapping_of_item for item in sequence if filtering_condition]
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Monster</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_monster</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'A monster.'</span><span class="p">)</span>
 
-</code></pre>
-<p>We can also create other data structures by comprehensions, for example sets and dictionaries. Here's an example:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">alphabet</span> <span class="o">=</span> <span class="s1">'abcdefghijklmnopqrstuvwxyz'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">letter_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="n">alphabet</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alphabet</span><span class="p">))}</span>
+<span class="n">pika</span> <span class="o">=</span> <span class="n">Monster</span><span class="p">()</span>
+<span class="n">pika</span><span class="o">.</span><span class="n">print_monster</span><span class="p">()</span>
 </pre></div>
-<p>We can accomplish the same results with standard loops, but comprehensions can be very convenient for simplifying our code.</p>
-<h3 id="Question-5">Question 5<a class="anchor-link" href="#Question-5">¶</a></h3><p>Use the command on the command line</p>
-<pre><code>python ok -q comprehensions -u
-</code></pre>
-<p>to start the exercises.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>A monster.
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7965,83 +7738,390 @@ python ok -q count_characters
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Handling-exceptions">Handling exceptions<a class="anchor-link" href="#Handling-exceptions">¶</a></h2><p>In addition to bugs in our code, a program may run into an error for various reasons. It may try to open a file or scrape a website that does not exist. Or it may rely on user input that may come in the wrong format. Up to now, we have simply said that if an error comes up, this is fatal for the program, causing it to stop executing. But this is usually not very convenient: we don't want a website or program to crash at the simplest error. Instead of crashing, we can <em>handle</em> errors within programs.</p>
-<p>Errors can be alternatively thought of as <em>exceptions</em>. Most often, an error is a situation where a statement is outside Python's appropriate syntax or semantics. When we started defining functions, we used the example of converting miles to kilometers.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">miles_to_km</span><span class="p">(</span><span class="n">miles</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert miles to kilometers.</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
+<p>A method is a function defined just like before, but within the class.  There is one evident difference to our earlier functions: the <code>self</code> parameter. We use <code>self</code> as the first parameter of all functions defined inside a class. However, when calling the function, we omit this parameter.</p>
+<p>Why do we use <code>self</code>? The answer is that it refers to the object making the function call. Above, we have defined the class <code>Monster</code> and created the instance <code>pika</code>, and then call <code>pika.print_monster()</code>. When we do this, Python sees that the <code>pika</code> object is of type <code>Monster</code>. It finds that class, and automatically converts the call to <code>Monster.print_monster(pika)</code>. In brief, whenever you see <code>self</code> in the class definition, you can mentally replace it with the instance itself, in this case <code>pika</code>.</p>
+<p>This use of <code>self</code> becomes clearer when we start storing data within objects. Let's start by giving our monster a name.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Monster</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_monster</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'A monster called </span><span class="si">{}</span><span class="s1">.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
 </pre></div>
-<p>Now, suppose that instead of using a number, we accidentally call the function with a string input <code>'9'</code>. The interpreter finds this operation is not well defined, and <em>raises an exception</em> (error) called TypeError.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9'</span><span class="p">)</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Here we define another method: the <code>__init__</code> function (with two underscores on each side) is a special function  used in classes. It is called when we create a new object of the <code>Monster</code> type. Here we give the function a <code>name</code> parameter, which it attaches it to the new monster we create as a data field <code>self.name</code>.</p>
+<p>With data fields, we use the notation <code>self.name</code> to refer to the specific object we're dealing with. That is, <code>name</code> is a local variable defined as the function parameter, and <code>self.name</code> is something called <code>name</code> inside the object called <code>self</code>.</p>
+<p>Let's define our monster again, this time giving it a name.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pika</span> <span class="o">=</span> <span class="n">Monster</span><span class="p">(</span><span class="s1">'Pikachu'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pika</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">pika</span><span class="o">.</span><span class="n">print_monster</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Pikachu
+A monster called Pikachu.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The monster now has a name as an attribute. Note how we can mentally replace <code>self</code> in the class definition with <code>pika</code> when referring to the object's attributes.</p>
+<p>Creating our monster works just like creating any new object. Compare the above to creating a list.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span> <span class="c1"># creates empty list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+<span class="n">a_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[]
+[1]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Let's add more attributes to our monster class.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Monster</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">monster_type</span><span class="p">,</span> <span class="n">combat_points</span><span class="p">,</span> <span class="n">hit_points</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monster_type</span> <span class="o">=</span> <span class="n">monster_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">combat_points</span> <span class="o">=</span> <span class="n">combat_points</span> <span class="c1"># strength in combat</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hit_points</span> <span class="o">=</span> <span class="n">hit_points</span> <span class="c1"># max health</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">health</span> <span class="o">=</span> <span class="n">hit_points</span> <span class="c1"># current health</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_monster</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'A monster called </span><span class="si">{}</span><span class="s1">.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        
+<span class="n">pika</span> <span class="o">=</span> <span class="n">Monster</span><span class="p">(</span><span class="s1">'Pikachu'</span><span class="p">,</span> <span class="s1">'electric'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pika</span><span class="o">.</span><span class="n">hit_points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>80
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now whenever we create a new Monster, it will have these data attributes attached to it. Next, we will build up ways to manipulate these data. We will do this by adding more methods to the class.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Monster</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">monster_type</span><span class="p">,</span> <span class="n">combat_points</span><span class="p">,</span> <span class="n">hit_points</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monster_type</span> <span class="o">=</span> <span class="n">monster_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">combat_points</span> <span class="o">=</span> <span class="n">combat_points</span> <span class="c1"># strength in combat</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hit_points</span> <span class="o">=</span> <span class="n">hit_points</span> <span class="c1"># max health</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">health</span> <span class="o">=</span> <span class="n">hit_points</span> <span class="c1"># current health</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_monster</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'A monster called </span><span class="si">{}</span><span class="s1">.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_health</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">health</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_hit_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hit_points</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_health_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">health</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">{}</span><span class="s1"> is knocked out!'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">{0}</span><span class="s1"> has </span><span class="si">{1}</span><span class="s1"> health left.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">health</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">hurt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">damage</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Reduce monster health by damage to a minimum of zero</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">health</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">health</span> <span class="o">-</span> <span class="n">damage</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">{}</span><span class="s1"> is hurt!'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print_health_status</span><span class="p">()</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
 
-  <span class="n">File</span> <span class="s2">"&lt;ipython-input-2-dd84c41e495b&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9'</span><span class="p">)</span>
-
-  <span class="n">File</span> <span class="s2">"&lt;ipython-input-1-42a024b837ed&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">miles_to_km</span>
-    <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
-
-<span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span><span class="s1">'t multiply sequence by non-int of type '</span><span class="nb">float</span><span class="s1">'</span>
+              
+<span class="n">pika</span> <span class="o">=</span> <span class="n">Monster</span><span class="p">(</span><span class="s1">'Pikachu'</span><span class="p">,</span> <span class="s1">'electric'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="n">pika</span><span class="o">.</span><span class="n">hurt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
-<p>The error causes our program to terminate. But we might expect that the function is sometimes called with this kind of bad input.  If we anticipate this error, we can try to <em>handle</em> it so our program can continue executing. This is often also called <em>catching</em> errors. The idea is that instead of stopping execution, we tell Python what to do when the exception/error occurs. Our program execution can then continue.</p>
-<p>You can see this type of behaviour every day when you use a computer. For example, if you're filling out a form requiring a date on a website, and type a date in illegal format, the program does not crash but tells you what happened and prompts you again for a valid date.</p>
-<p>Catching exceptions in Python is done with the following syntax:</p>
-<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="c1"># block of code</span>
-<span class="k">except</span> <span class="n">ExceptionName</span><span class="p">:</span>
-    <span class="c1"># code in case of error</span>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Pikachu is hurt!
+Pikachu has 75 health left
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The class now includes a host of other functions. Many of these simply return the different attributes of the monster. The <code>__str__</code> function is a special function that gets called whenever we call a string representation of a monster with <code>str(pika)</code> or <code>print(pika)</code>.</p>
+<p>It is a safe programming practice to use functions like this instead of directly referring to a monster's attributes:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pika</span> <span class="o">=</span> <span class="n">Monster</span><span class="p">(</span><span class="s1">'Pikachu'</span><span class="p">,</span> <span class="s1">'electric'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span> 
+<span class="n">pika</span><span class="o">.</span><span class="n">get_health</span><span class="p">()</span> <span class="o">==</span> <span class="mi">80</span> <span class="c1"># safe practice</span>
+<span class="n">pika</span><span class="o">.</span><span class="n">health</span> <span class="o">==</span> <span class="mi">80</span> <span class="c1"># not as safe practice - we might accidentally change value if we omit one equals sign</span>
 </pre></div>
-<p>Let's return to our error-producing example:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">miles_to_km</span><span class="p">(</span><span class="n">miles</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert miles to kilometers.</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
-</pre></div>
-<p>We tried to add an integer and a string, which produced an error.</p>
-<p>With the try-except statement, we can try to catch such errors and correct the input. Suppose that we anticipate one of the inputs to be a string instead of an integer.</p>
-<p>We can change the code as follows using the above syntax in the case of TypeError to make the error clearer:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">miles_to_km</span><span class="p">(</span><span class="n">miles</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert miles to kilometers.</span>
-<span class="sd">    """</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
-    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'The input should be an integer or a float.'</span><span class="p">)</span>
-</pre></div>
-<p>Now, if we try to a string input,  we get the message instead of an error:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9'</span><span class="p">)</span>
-<span class="n">The</span> <span class="nb">input</span> <span class="n">should</span> <span class="n">be</span> <span class="n">an</span> <span class="n">integer</span> <span class="ow">or</span> <span class="n">a</span> <span class="nb">float</span><span class="o">.</span>
-</pre></div>
-<p>Depending on how we want to design the program, we could go further and try to convert strings to integer values within the function.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">miles_to_km</span><span class="p">(</span><span class="n">miles</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert miles to kilometers.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In more complex projects, using such functions would help make sure that these values are not accidentally changed. Indeed, some programming languages erect such of walls around object attributes by default. Python instead gives you direct access to the attributes. We are, however, not going to worry too much about these practices in this module.</p>
+<h3 id="Question-2:-What-would-Python-display">Question 2: What would Python display<a class="anchor-link" href="#Question-2:-What-would-Python-display">¶</a></h3><p>Check your understanding of the above concepts by running</p>
+<pre><code>python ok -q monsters -u
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Question-3:-Healing-monsters">Question 3: Healing monsters<a class="anchor-link" href="#Question-3:-Healing-monsters">¶</a></h3><p>Let's add more methods to Monsters. We've already created a function called <code>hurt</code>, which reduces a monster's health. Now let's implement the method <code>heal</code>, which similarly increases its health. Note however that <em>a monster's health cannot exceed its hit points</em>. Implement the method <code>heal</code> in the <code>Monster</code> class in <code>oop.py</code>. Your method should increase the health as desired and also print out the monster's health status similarly to the <code>hurt</code> function.</p>
+<p>You can test your implementation with</p>
+<pre><code>python ok -q Monster.heal -v
+</code></pre>
+<blockquote>
+<p><strong>Important.</strong> Whenever you update the code in the Monster class, you'll need to run it again so that Python knows to load up your changes. You'll similarly need to recreate all your Monster objects to reflect the changes you've made.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="More-monsters">More monsters<a class="anchor-link" href="#More-monsters">¶</a></h2><h3 id="Question-4:-Attack!">Question 4: Attack!<a class="anchor-link" href="#Question-4:-Attack!">¶</a></h3><p>Next, let's add attacks for the monsters so they can battle. Following the design of the Monster class, we'll design a class <code>Attack</code> which defines attacks in <code>oop.py</code>.</p>
+<p>An attack has the following attributes:</p>
+<ul>
+<li><code>name</code>, a string</li>
+<li><code>attack_type</code>, a string</li>
+<li><code>damage</code>, a float</li>
+</ul>
+<p>The stub code has the following functions to be completed:</p>
+<ul>
+<li><code>__init__</code> is used when a new <code>Attack</code> object instance is created. It stores the input attributes.</li>
+<li><code>get_attack_type</code> returns the attack type.</li>
+<li><code>get_damage</code> returns the attack damage.</li>
+<li><code>__str__</code> returns the name (this is already implemented and will be called if you use <code>print(attack)</code>)</li>
+</ul>
+<p>You can test your implementation with</p>
+<pre><code>python ok -q test_attack -v
+</code></pre>
+<p>Now you have designed a data structure to capture the attributes of attacks. But the monsters don't know how to use them yet... next, update your implementation of the <code>Monster</code> class so that the monsters can use these attacks to fight each other. Implement the function <code>use_attack(self, attack, target_monster)</code> within the <code>Monster</code> class that uses an attack on another monster. This function should <code>hurt</code> the other monster with the current monster's <code>damage</code>, modified by their relative strength in combat. See the function docstring for details on how to calculate the exact damage.</p>
+<p>You can test your implementation with</p>
+<pre><code>python ok -q Monster.use_attack -v
+</code></pre>
+<h3 id="Question-5:-Monster-check">Question 5: Monster check<a class="anchor-link" href="#Question-5:-Monster-check">¶</a></h3><p>Check your understanding of the above concepts by running</p>
+<pre><code>python ok -q more_monsters -u
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Queues">Queues<a class="anchor-link" href="#Queues">¶</a></h2><p>Let's move from pocket monsters back to efficient algorithm design. In the lecture, we looked briefly into the mechanics of implementing linear data structures, specifically lists. There are various ways of doing this, the simplest of which are an array and a linked list. We saw that the efficiency of list operations depends on its implementation. The difference is that an array keeps track of the absolute positions of elements while a linked list only tracks their relative positions. Adding an element to a linked list is therefore constant time, but in an array the complexity depends on the position of the element. If the element is appended to the end of the list, this is still constant time, but adding to the beginning is $O(n)$ as all other elements need to be moved forward by one position. However, accessing a linked list by index is $O(n)$ while any position in an array can be accessed in $O(1)$.</p>
+<p>In this exercise, you'll implement another linear data structure: a queue. Queues work much as you would expect from your experience in the college cafe: you add items to one end of the queue, and remove them from the other end. Queues are not only everywhere in the world (especially in London), but their design is crucial to operations in many service industries. Furthermore, we will see in the following sessions that a queue is a useful abstraction in algorithm design. Its advantage is that when efficiently implemented, its operations (adding and removing items) are both constant $O(1)$ running time.</p>
+<h3 id="Question-6:-Queue-using-list">Question 6: Queue using list<a class="anchor-link" href="#Question-6:-Queue-using-list">¶</a></h3><p>The Python file <code>oop_extra.py</code> asks you to complete two implementations of a queue. The first, <code>ListQueue</code>, uses the Python <code>list</code> to build a queue. It has four methods.</p>
+<ul>
+<li><code>__init__</code> is used when a new <code>ListQueue</code> object is created. It creates an empty list of items in the queue.</li>
+<li><code>is_empty</code> checks whether the queue is empty.</li>
+<li><code>enqueue</code> adds an item to the queue (in the end of the list)</li>
+<li><code>dequeue</code> removes an item from the queue (from the beginning of the list)</li>
+</ul>
+<p>Note how the methods again refer to the <code>ListQueue</code> object itself using the keyword <code>self</code>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ListQueue</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">""" </span>
+<span class="sd">    Queue using list</span>
 <span class="sd">    </span>
-<span class="sd">    Try to convert string inputs into integers.</span>
+<span class="sd">    Supports inserting and deleting nodes</span>
 <span class="sd">    """</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">miles</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
-            <span class="n">miles</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">miles</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
-    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'The input should be a float, an integer, or an integer string.'</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Initialise queue as list"""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">=</span><span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Checks if queue is empty</span>
+<span class="sd">        """</span>
+        <span class="k">pass</span> <span class="c1"># replace with code</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span> 
+<span class="w">        </span><span class="sd">""" </span>
+<span class="sd">        Insert an element into the end of the queue (list)</span>
+<span class="sd">        """</span>
+        <span class="k">pass</span> <span class="c1"># replace with code</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Remove the first element of the queue, return it</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
 </pre></div>
-<p>Now our program works for integers in string form.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9'</span><span class="p">)</span>
-<span class="mf">14.481</span>
-</pre></div>
-<p>Notice however that how we want to do handle exceptions depends on the goal of the program. What would happen with the following  function calls?</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">([</span><span class="mi">9</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9.1'</span><span class="p">)</span>
-</pre></div>
-<p>We haven't specified what to do in the latter case, which produces a <code>ValueError</code>, and we would need to handle it differently.</p>
-<p>Apart from the specific error <code>TypeError</code> that was inserted above, Python includes several types of built-in errors. Additionally, many libraries override the error classes to provide errors that suit their needs.</p>
-<p>We can always use the most generic term for error, which is <code>except:</code> with no specified type to catch all errors regardless of their type. However, in general it is good practice to be as specific as possible about the exceptions we use in order not to accidentally intercept all possible errors and problems in code.</p>
-<p>Exceptions are useful more generally than for catching errors, as they can be used to control program flow. It is also possible to define and raise our own types of exceptions in specific situations. For more information, see Guttag's chapter 7.2. It is also useful to learn to use <em>assertions</em> to confirm results of computations, see Guttag 7.3.</p>
+</div>
 </div>
 </div>
 </div>
@@ -8052,16 +8132,34 @@ python ok -q count_characters
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">¶</a></h3><p>Let's assume that you are given the code below:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="o">...</span>     <span class="s2">"""divides a with b"""</span>
-<span class="o">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<p>Complete the class <code>ListQueue</code> to work correctly. You can test your implementation with</p>
+<pre><code>python ok -q test_listqueue -v
+</code></pre>
+<h3 id="Question-7:-Queue-of-Nodes">Question 7: Queue of Nodes<a class="anchor-link" href="#Question-7:-Queue-of-Nodes">¶</a></h3><p>The problem with the above implementation is that adding items to the beginning of the list is computationally expensive. Your task is to implement a more efficient queue class without using a Python list. You'll do this by creating a queue of <em>nodes</em>. A <code>Node</code> class implementation is given below. In brief, a node is a simple data structure that stores unspecified data in the variable <code>stuff</code>, as well as information on what other node (if any) it is connected to.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">""" </span>
+<span class="sd">    Node: contains unspecified data in stuff and link to next Node</span>
+<span class="sd">    """</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stuff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">next_node</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> 
+        <span class="c1"># this will run when you create a new Node</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stuff</span> <span class="o">=</span> <span class="n">stuff</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_node</span>  <span class="o">=</span> <span class="n">next_node</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># this will run when you use print() on a node</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stuff</span><span class="p">)</span>
 </pre></div>
-<p>Now, if you execute <code>divide(10, 2)</code>, it should work. However, in the case of <code>divide(10, 0)</code>, what does it do? Can you correct it with an exception?</p>
-<p>Complete the function <code>divide</code> in <code>ses06.py</code>. You can use the command</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">ok</span> <span class="o">-</span><span class="n">q</span> <span class="n">divide</span>
-</pre></div>
-<p>to test your implementation.</p>
+</div>
 </div>
 </div>
 </div>
@@ -8072,107 +8170,48 @@ python ok -q count_characters
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Reading-data-from-files">Reading data from files<a class="anchor-link" href="#Reading-data-from-files">¶</a></h2><p>Most algorithms in real applications require auxiliary input data from files, or need to export results or parameters into files. Python offers a convenient built-in way to parse files. Later on in the course, we'll look at some application-specific libraries which include their own ways of parsing files for their purposes.</p>
-<p>We can use the command <code>open(filename, flags)</code> to open a file. Here,  <code>flags</code> is <code>'r'</code> if we are reading the file, <code>'w'</code> if we are writing into it (there are also some more advanced options available, which we won't go into here).</p>
-<p>The Codespace contains the text file <code>odyssey.txt</code> in the directory <code>data/</code> (downloaded from <a href="https://www.gutenberg.org/">Project Gutenberg</a>). You can open the file by typing the following commands into the Python console (note we combine the <strong>directory</strong> with the <strong>filename and extension</strong> to create the <strong>path to the file</strong>).</p>
-<div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s1">'data/odyssey.txt'</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-</pre></div>
-<p>The variable <code>f</code> that we have just defined contains the required information so that we can parse the text if we want to. However, we have just opened the file, not actually read its contents. Let's start reading the data:</p>
-<div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-</pre></div>
-<p>What you have just done is that one line has been read from the file we opened. If we call it again, the next line will be parsed till the end of file is reached. After we're done, we should clean up by closing the file with the command</p>
-<div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-<p>Files often contain several (thousands of) lines, so typically we loop through them and parse as many lines as we wish. Furthermore, we can automatically have the file close using the keyword <code>with - as</code>. After the indented block following <code>with</code>, the file closes automatically.</p>
-<div class="highlight"><pre><span></span><span class="c1"># parsing the first n lines of the file.</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-</pre></div>
-<p>Alternatively to looping through the text file, we can use the commands <code>f.read()</code> to read the entire text to a single string, or <code>f.readlines()</code> to read the entire text to a list of strings containing each line of the text.</p>
-<p>The above approach for reading files works in many cases. But text files come in many shapes and forms: in particular, some of them are <em>encoded</em> in different ways to capture different character conventions. A common one is <code>utf8</code>, which captures the Unicode standard. To read a text file with a specific encoding, we can include it as an option:</p>
-<div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s1">'data/odyssey.txt'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-</pre></div>
-<p><strong>Related Exercise.</strong> (No test for this exercise. Not graded.) What is the first word of the 16th line of the text?</p>
-<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">¶</a></h3><p>Let's write a function to count words in a book. Complete the function <code>count_words</code> in the file <code>ses06.py</code>. You can test your implementation with</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">ok</span> <span class="o">-</span><span class="n">q</span> <span class="n">count_words</span>
-</pre></div>
-<p><strong>Additional Exercise:</strong> (No test for this one. Not graded.) Use the function on the Odyssey. How many times is the word <code>Odysseus</code> used? How would you find the most common words? The most common words with at least 10 characters?</p>
-<h3 id="Writing-to-a-file">Writing to a file<a class="anchor-link" href="#Writing-to-a-file">¶</a></h3><p>Writing to a file works similarly to reading from a file. When we open a file for writing data into it, we use the flag <code>'w'</code> instead of <code>'r'</code>:</p>
-<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'test.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'hey there'</span><span class="p">)</span>
-</pre></div>
-<p>This will write the string <code>'hey there'</code> to the file <code>test.txt</code>. You may try it in the Python console.</p>
-<p>Note we must be very careful when writing to files as this will by default overwrite previous data.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="All-done!">All done!<a class="anchor-link" href="#All-done!">¶</a></h2><p>That's it for the main exercises.</p>
-<p>To submit the exercises, please follow these instructions from your GitHub Codespace:</p>
-<ol>
-<li>Test all your functions using the above <code>ok</code> commands.</li>
-<li>Open the <code>Source Control</code> menu on the left-hand panel of VS Code and enter any message in the message field (e.g. "submit")</li>
-<li>Click the blue/green button once (to <code>Commit</code>), and then a second time (to <code>Sync</code>).</li>
-<li>There should be no files visible in the <code>Source Control</code> menu if submission succeeded.</li>
-</ol>
-<h2 id="Review-questions">Review questions<a class="anchor-link" href="#Review-questions">¶</a></h2><p>Here are some questions to review the material we've covered today:</p>
+<p>Try creating a few nodes with string inputs.</p>
+<p>The Python file contains a skeleton implementation of a <code>Queue</code> class. Your task is to complete it so that it performs the same operations as the <code>ListQueue</code> class but creating the queue from <code>Node</code> objects by linking them together. In order to quickly add and remove elements, your class should keep track of which node is first and last in the queue, the length of the queue, as well as the next node for each node. Here's how it works.</p>
 <ul>
-<li>Can you think of situations when we'd like to use tuples, sets, and dictionaries instead of lists?</li>
-<li>Why and when do we use exceptions?</li>
+<li>Suppose we start with an empty queue, and we add a node $a$. Now $a$ is both the first and the last item in the queue, but since there are no other items, $a$ does not have a next node. The length of our queue is one.</li>
+<li>Now let's add another node $b$. The node $a$ now needs to point to $b$ as the next node. Node $a$ is still first in the queue, but the last item needs to be updated to be $b$. The last node does not point to another node. The length of the queue is increased to two.</li>
+<li>Let's remove a node. This should return the <code>stuff</code> inside the first node, $a$. Now $b$ becomes the first node, and the length of the queue is decreased to one.</li>
 </ul>
-<p>To learn more about how dictionaries work, read this chapter on hashing in Miller and Ranum's online book:</p>
+<p>Note you can pass <code>stuff</code> directly as input when adding to the queue, as the <code>Node</code> is created within the queue. This kind of abstraction is often useful: the user does not have to worry about the internal operations of your data structure.</p>
+<p>The class also contains a <code>__str__ </code> method for you to complete. This is useful for printing out your queue status.</p>
+<p>Complete the class <code>Queue</code> to work correctly. You can test your implementation with</p>
+<pre><code>python ok -q test_queue -v
+</code></pre>
+<p>After you have completed the class, try out the queue and compare the speed of the enqueueing operations of the two classes. Python has a built-in data structure <code>deque</code> which implements a slightly more complicated data type called <em>double-ended queue</em>, giving an efficient way to use queues. Look for more information on double-ended queues on e.g. Wikipedia.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Review">Review<a class="anchor-link" href="#Review">¶</a></h2><p>Object-oriented programming provides a new way of organising our data - for example pocket monsters - together with the procedures associated with them.</p>
+<p>Check your understanding of the concepts with these questions:</p>
 <ul>
-<li><a href="https://interactivepython.org/runestone/books/published/pythonds/SortSearch/Hashing.html">https://interactivepython.org/runestone/books/published/pythonds/SortSearch/Hashing.html</a></li>
+<li>What do we mean by a class and an instance?</li>
+<li>How do we add attributes and methods to an object?</li>
+<li>What do the <code>__init__</code> and <code>__str__</code> methods do, and when are they called?</li>
+<li>How is the keyword <code>self</code> used?</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Question-8:-Encryption">Question 8: Encryption<a class="anchor-link" href="#Question-8:-Encryption">¶</a></h3><p>Let's build one of the most widely known encryption techniques, <em>Caesar's cipher</em>. It works as follows: we start with a string <code>str_to_encrypt</code> and an encoding integer <code>n</code>. We'll then replace each letter in the string to an encrypted one by shifting the letter by n positions. For example, if we set n = 1, each <code>a</code> becomes <code>b</code>, <code>b</code> becomes <code>c</code> and so forth. We'll write a function that performs this encryption.</p>
-<p>Complete the functions <code>caesar_cipher_encrypt</code> and <code>caesar_cipher_decrypt</code> in <code>ses06_extra.py</code>. You can test your implementation with</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">ok</span> <span class="o">-</span><span class="n">q</span> <span class="n">caesar_cipher_encrypt</span>
-<span class="n">python</span> <span class="n">ok</span> <span class="o">-</span><span class="n">q</span> <span class="n">caesar_cipher_decrypt</span>
-</pre></div>
-<p>Once you've implemented the encryption, how can you decrypt most easily?</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Recommended:-Working-with-data">Recommended: Working with data<a class="anchor-link" href="#Recommended:-Working-with-data">¶</a></h2><p>Next, please see the exercises on working with data in <code>pandas.ipynb</code>. There is no submission, but work on these when you can, as they will support you for Homework 2.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Optional:-Modules-and-libraries;-Trump-tweets-revisited">Optional: Modules and libraries; Trump tweets revisited<a class="anchor-link" href="#Optional:-Modules-and-libraries;-Trump-tweets-revisited">¶</a></h2><p>In the <code>optional/</code> directory, there are optional exercises on analysing Trump tweets from JSON data in the Jupyter Notebook file <code>trump_tweets.ipynb</code> and on web scraping in the Jupyter Notebook file <code>web_scraping.ipynb</code>.</p>
+<p>There is a lot more to object-oriented programming than what we have covered here. Here are some more resources about OOP:</p>
+<ul>
+<li><a href="https://www.python-course.eu/python3_object_oriented_programming.php">Python-course.eu</a> is quite comprehensive on OOP</li>
+<li><a href="https://realpython.com/python3-object-oriented-programming/#how-to-define-a-class-in-python">Real Python's tutorial</a> on  OOP</li>
+<li><a href="https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/">Jeff Knupp</a> on OOP</li>
+</ul>
+<p>If you end up doing more OOP, one (advanced) thing to note is that the way we have implemented the "get" methods is not the ideal or "pythonic" way of providing an interface to object attributes. If we'd like a class to have private attributes, we would typically make these attributes "properties". To understand how properties work, we first need to know what "decorators" are in Python.</p>
+<ul>
+<li><a href="https://realpython.com/primer-on-python-decorators/">Real Python's tutorial on decorators</a></li>
+<li><a href="https://www.python-course.eu/python3_properties.php">Python-course.eu</a> on properties</li>
+</ul>
 </div>
 </div>
 </div>

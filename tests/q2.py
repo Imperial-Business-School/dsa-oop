@@ -1,5 +1,5 @@
 test = {
-  'name': 'Pandas_Q2',
+  'name': 'Numpy - Q2',
   'points': 0,
   'suites': [
     {
@@ -7,12 +7,12 @@ test = {
         {
           'code': r"""
           >>> # It looks like you didn't give anything the name
-          >>> # sum_pop_countries_data.  Maybe there's a typo, or maybe you
+          >>> # average_for_AMZN.  Maybe there's a typo, or maybe you
           >>> # just need to run the cell above this test cell where you defined
-          >>> # sum_pop_countries_data.  (Click that cell and then click the "run
+          >>> # average_for_AMZN.  (Click that cell and then click the "run
           >>> # cell" button in the menu bar above.)
-          >>> 'sum_pop_countries_data' in vars()
-          cef461e340f176db84632b8704478459
+          >>> 'average_for_AMZN' in vars()
+          8b4928a4e87b08b3d1b0cc98b979c72f
           # locked
           """,
           'hidden': False,
@@ -20,31 +20,8 @@ test = {
         },
         {
           'code': r"""
-          >>> abs(sum_pop_countries_data - 196.1) < 0.01
-          cef461e340f176db84632b8704478459
-          # locked
-          """,
-          'hidden': False,
-          'locked': True
-        },
-        {
-          'code': r"""
-          >>> # It looks like you didn't give anything the name
-          >>> # std_gdp_countries_data.  Maybe there's a typo, or maybe you
-          >>> # just need to run the cell above this test cell where you defined
-          >>> # std_gdp_countries_data.  (Click that cell and then click the "run
-          >>> # cell" button in the menu bar above.)
-          >>> 'std_gdp_countries_data' in vars()
-          cef461e340f176db84632b8704478459
-          # locked
-          """,
-          'hidden': False,
-          'locked': True
-        },
-        {
-          'code': r"""
-          >>> abs(std_gdp_countries_data - 911.6) < 0.01
-          cef461e340f176db84632b8704478459
+          >>> average_for_AMZN == 478
+          8b4928a4e87b08b3d1b0cc98b979c72f
           # locked
           """,
           'hidden': False,

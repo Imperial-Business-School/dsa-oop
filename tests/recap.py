@@ -1,15 +1,14 @@
 test = {
-  'name': 'Recap',
+  'name': 'Recap Lists and Dictionaries',
   'points': 0,
   'suites': [
     {
       'cases': [
         {
           'code': r"""
-          >>> l1 = [1, 2, 4, 8, 16]
-          >>> l2 = [1, 3, 9, 27]
-          >>> len(l1)
-          96d40d013e23679fb02f8e16b1ca3ae9
+          >>> d = {'dog': 'bone', 'cat': 'mouse', 'bird': 'work', 'cow': 'grass'}
+          >>> 'mouse' in d
+          4c6983d5f50ec727a8c698b81146ec40
           # locked
           """,
           'hidden': False,
@@ -17,10 +16,12 @@ test = {
         },
         {
           'code': r"""
-          >>> l1 = [1, 2, 4, 8, 16]
-          >>> l2 = [1, 3, 9, 27]
-          >>> len(l2)
-          09e15535b274c7b526e57d1a67d97f4c
+          >>> points = {'Maria':[4, 2], 'Tom':[1, 4], 'John':[1, 2]}
+          >>> total = []
+          >>> for i in points:
+          >>>   total.append(sum(points[i]))
+          >>> total
+          e9f62bd2194e2169ac2d4b6433f76bf8
           # locked
           """,
           'hidden': False,
@@ -28,41 +29,11 @@ test = {
         },
         {
           'code': r"""
-          >>> l1 = [1, 2, 4, 8, 16]
-          >>> l2 = [1, 3, 9, 27]
-          >>> l3_a = [l1, l2]
-          >>> len(l3_a)
-          2760d308a1982bd76abbb5a2883d31e6
-          # locked
-          """,
-          'hidden': False,
-          'locked': True
-        },
-        {
-          'code': r"""
-          >>> l1 = [1, 2, 4, 8, 16]
-          >>> l2 = [1, 3, 9, 27]
-          >>> l3_b = l1 + l2
-          >>> len(l3_b)
-          02023badfcd182e96431a63561f422e9
-          # locked
-          """,
-          'hidden': False,
-          'locked': True
-        }
-      ],
-      'scored': False,
-      'type': 'wwpp'
-    },
-    {
-      'cases': [
-        {
-          'code': r"""
-          >>> cnt = 0
-          >>> for i in range(9):
-          ...     cnt += 1
-          >>> print(cnt)
-          02023badfcd182e96431a63561f422e9
+          >>> a = [3, 6, 8, 2]
+          >>> b = ['a','A','er']
+          >>> c = a[3::-2]+b[:-1]
+          >>> c
+          3762b10dc2b83d11e87af224cba99f1c
           # locked
           """,
           'hidden': False,
